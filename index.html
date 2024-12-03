@@ -48,7 +48,6 @@
             <li>Problem Solving</li>
             <li>Machine Learning</li>
             <li>Cyber Security</li>
-            <!-- Add more skills as needed -->
         </ul>
     </section>
 
@@ -63,7 +62,6 @@
             <h3>Hall's Dining Token Purchase System</h3>
             <p>The Hall's Dining Token Purchase System is a web-based application designed to streamline the process of purchasing dining tokens for hall meals. It offers a convenient platform for students or residents of a hall to purchase tokens online, reducing the need for manual transactions and paperwork.</p>
         </div>
-        <!-- Add more projects as needed -->
     </section>
 
     <section id="cp">
@@ -77,23 +75,26 @@
 
                 const profiles = [
                     { username: "md_imdadul_haque_somik", platform: "Codeforces", link: "https://codeforces.com/profile/md_imdadul_haque_somik" },
-                    { username: "Md_Imdadul_Haque_Somik", platform: "LeetCode", link: "https://leetcode.com/u/Md_Imdadul_Haque_Somik/" },
-                    { username: "md_imdadul_haque_somik", platform: "Dimik", link: "https://dimikoj.com/profile/d96d?md_imdadul_haque_somik" },
-                    { username: "1619190", platform: "UVa Online Judge", link: "https://uhunt.onlinejudge.org/id/1619190" },
-                    { username: "somik", platform: "Aizu Online Judge", link: "https://onlinejudge.u-aizu.ac.jp/status/users/somik" },
-                    { username: "somik_2103147", platform: "vJudge", link: "https://vjudge.net/user/somik_2103147" },
-                    { username: "ihsomik", platform: "HackerEarth", link: "https://www.hackerearth.com/@ihsomik" },
-                    { username: "somik", platform: "HackerRank", link: "https://www.hackerrank.com/profile/somik" },
-                    { username: "ih_somik", platform: "TopCoder", link: "https://profiles.topcoder.com/ih_somik" },
-                    { username: "IH_Somik", platform: "AtCoder", link: "https://atcoder.jp/users/IH_Somik" },
-                    { username: "somik", platform: "CodeChef", link: "https://www.codechef.com/users/somik" },
-                    { username: "somik", platform: "LightOJ", link: "https://lightoj.com/user/somik" },
                     { username: "178080", platform: "CSES", link: "https://www.cses.fi/user/178080" },
+                    { username: "ihSomik", platform: "LeetCode", link: "https://leetcode.com/u/ihSomik/" },
+                    { username: "ihSomik", platform: "HackerRank", link: "https://www.hackerrank.com/profile/ihSomik" },
+                    { username: "ihsomik", platform: "LightOJ", link: "https://lightoj.com/user/ihsomik" },
+                    { username: "somik_2103147", platform: "vJudge", link: "https://vjudge.net/user/somik_2103147" },
+                    { username: "somik", platform: "AOJ", link: "https://onlinejudge.u-aizu.ac.jp/status/users/somik" },
+                    { username: "dimikoj", platform: "Dimik", link: "https://dimikoj.com/profile/d96d?md_imdadul_haque_somik" },
+                    { username: "ihsomik", platform: "CodeChef", link: "https://www.codechef.com/users/ihsomik" },
+                    { username: "1619190", platform: "UVa", link: "https://uhunt.onlinejudge.org/id/1619190" },
+                    { username: "ihsomik", platform: "AtCoder", link: "https://atcoder.jp/users/ihSomik" },
+                    { username: "ihsomik", platform: "HackerEarth", link: "https://www.hackerearth.com/@ihsomik" },
                     { username: "somik", platform: "SPOJ", link: "https://www.spoj.com/users/somik/" },
+                    { username: "ihSomik", platform: "TopCoder", link: "https://profiles.topcoder.com/ihsomik" },
+                    { username: "ihSomik", platform: "Toph", link: "https://toph.co/u/ihSomik" },
+                    { username: "ihSomik", platform: "Project Euler", link: "https://projecteuler.net/profile/ihSomik.png" }
                 ];
 
-                const badgeHTML = profiles.map((profile) => generateBadge(profile.username, profile.platform, profile.link)).join("");
-                document.write(badgeHTML);
+                profiles.forEach(profile => {
+                    document.write(generateBadge(profile.username, profile.platform, profile.link));
+                });
             </script>
         </div>
     </section>
