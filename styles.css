@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to bottom right, #d0f0c0, #e0f7fa);
+  color: #004d40;
+  transition: background 0.5s ease;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: #00796b;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #004d40;
+}
+
+
+header {
+  background: #b2dfdb;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 0 12px;
+}
+
+nav ul li a {
+  font-weight: 600;
+}
+
+
+section {
+  padding: 1rem 5% 3rem;
+  max-width: 1000px;
+  margin: auto;
+  animation: fadeIn 1s ease-in;
+}
+
+
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #00695c;
+  font-size: 2rem;
+  position: relative;
+}
+
+
+.intro {
+  text-align: center;
+  padding: 20px 20px 30px;
+}
+
+
+
+.intro h1 {
+  font-size: 3rem;
+  color: #00796b;
+}
+
+#typing-text {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  height: 40px;
+}
+
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+
+
+.about-container img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+.cv-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 1rem;
+  background: #4dd0e1;
+  color: #004d40;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cv-button:hover {
+  background: #00796b;
+  color: #fff;
+}
+
+
+.edu-list li,
+.experience-item,
+.reference-item {
+  background: #e0f2f1;
+  border-left: 5px solid #00796b;
+  padding: 15px 20px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.skills-section h3 {
+  margin-top: 2rem;
+  text-align: center;
+  color: #00695c;
+}
+
+.skills-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 10px;
+  margin: 1rem 0;
+}
+
+.skills-list li {
+  background: #a5d6a7;
+  color: #004d40;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skills-list li a {
+  color: #004d40;
+  font-weight: bold;
+}
+
+.skills-list li a:hover {
+  color: #00796b;
+}
+
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: #b2ebf2;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card h3 {
+  color: #004d40;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+
+.profile-badges,
+.resource-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.profile-badges .cv-button,
+.resource-buttons .cv-button {
+  font-size: 0.9rem;
+  padding: 8px 16px;
+}
+
+
+.reference-item p {
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+}
+
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contact-links a {
+  background: #80deea;
+  color: #004d40;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contact-links a:hover {
+  background: #004d40;
+  color: #fff;
+}
+
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+
+footer {
+  background: #b2dfdb;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #004d40;
+  margin-top: 2rem;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
