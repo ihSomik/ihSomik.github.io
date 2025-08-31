@@ -4,7 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ihSomik</title>
+  <title>ihSomik | Portfolio</title>
+
+  <!-- Updated Favicon with $ -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+  %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E
+  %3Ctext x='10' y='70' font-size='80' font-family='Arial'%3E%24%3C/text%3E
+  %3C/svg%3E">
+
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -12,9 +19,11 @@
 
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#home">ih$omik</a>
+      </div>
+      <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -24,8 +33,12 @@
         <li><a href="#references">References</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
     </nav>
   </header>
+
 
   <section id="home" class="reveal">
     <div class="intro">
@@ -145,26 +158,44 @@
 
   <section id="cp-profiles" class="reveal">
     <h2>Problem-Solving Profiles</h2>
-    <div class="profile-badges">
-      <a href="https://codeforces.com/profile/ihSomik" target="_blank" class="cv-button">Codeforces</a>
-      <a href="https://leetcode.com/u/ihSomik/" target="_blank" class="cv-button">LeetCode</a>
-      <a href="https://www.hackerrank.com/profile/ihSomik" target="_blank" class="cv-button">HackerRank</a>
-      <a href="https://lightoj.com/user/ihsomik" target="_blank" class="cv-button">LightOJ</a>
-      <a href="https://www.geeksforgeeks.org/user/ihsomik/" target="_blank" class="cv-button">GeeksforGeeks</a>
-      <a href="https://www.cses.fi/user/178080" target="_blank" class="cv-button">CSES</a>
-      <a href="https://projecteuler.net/profile/ihSomik.png" target="_blank" class="cv-button">ProjectEuler</a>
-      <a href="https://www.codechef.com/users/ihsomik" target="_blank" class="cv-button">CodeChef</a>
-      <a href="https://atcoder.jp/users/ihSomik" target="_blank" class="cv-button">AtCoder</a>
-      <a href="https://www.hackerearth.com/@ihsomik" target="_blank" class="cv-button">HackerEarth</a>
-      <a href="https://uhunt.onlinejudge.org/id/1619190" target="_blank" class="cv-button">UVa</a>
-      <a href="https://www.spoj.com/users/ihsomik/" target="_blank" class="cv-button">SPOJ</a>
-      <a href="https://vjudge.net/user/somik_2103147" target="_blank" class="cv-button">vJudge</a>
-      <a href="https://onlinejudge.u-aizu.ac.jp/status/users/somik" target="_blank" class="cv-button">AOJ</a>
-      <a href="https://dimikoj.com/profile/d96d?md_imdadul_haque_somik" target="_blank" class="cv-button">DimikOJ</a>
-      <a href="https://toph.co/u/ihSomik" target="_blank" class="cv-button">Toph</a>
-      <a href="http://poj.org/userstatus?user_id=ihSomik" target="_blank" class="cv-button">POJ</a>
+    <div class="ps-grid">
+      <a href="https://codeforces.com/profile/ihSomik" target="_blank"
+        style="--x:4px; --y:3px; --dur:0.3s; --dur2:0.5s;">Codeforces</a>
+      <a href="https://leetcode.com/u/ihSomik/" target="_blank"
+        style="--x:-3px; --y:4px; --dur:0.5s; --dur2:0.4s;">LeetCode</a>
+      <a href="https://www.hackerrank.com/profile/ihSomik" target="_blank"
+        style="--x:5px; --y:-2px; --dur:0.4s; --dur2:0.6s;">HackerRank</a>
+      <a href="https://lightoj.com/user/ihsomik" target="_blank"
+        style="--x:-4px; --y:3px; --dur:0.6s; --dur2:0.5s;">LightOJ</a>
+      <a href="https://www.geeksforgeeks.org/user/ihsomik/" target="_blank"
+        style="--x:3px; --y:-4px; --dur:0.5s; --dur2:0.7s;">GeeksforGeeks</a>
+      <a href="https://www.cses.fi/user/178080" target="_blank"
+        style="--x:-2px; --y:5px; --dur:0.7s; --dur2:0.6s;">CSES</a>
+      <a href="https://projecteuler.net/profile/ihSomik.png" target="_blank"
+        style="--x:4px; --y:2px; --dur:0.4s; --dur2:0.5s;">ProjectEuler</a>
+      <a href="https://www.codechef.com/users/ihsomik" target="_blank"
+        style="--x:-3px; --y:3px; --dur:0.5s; --dur2:0.4s;">CodeChef</a>
+      <a href="https://atcoder.jp/users/ihSomik" target="_blank"
+        style="--x:5px; --y:-3px; --dur:0.6s; --dur2:0.7s;">AtCoder</a>
+      <a href="https://www.hackerearth.com/@ihsomik" target="_blank"
+        style="--x:-4px; --y:4px; --dur:0.5s; --dur2:0.6s;">HackerEarth</a>
+      <a href="https://uhunt.onlinejudge.org/id/1619190" target="_blank"
+        style="--x:3px; --y:-2px; --dur:0.4s; --dur2:0.5s;">UVa</a>
+      <a href="https://www.spoj.com/users/ihsomik/" target="_blank"
+        style="--x:-2px; --y:3px; --dur:0.6s; --dur2:0.4s;">SPOJ</a>
+      <a href="https://vjudge.net/user/somik_2103147" target="_blank"
+        style="--x:4px; --y:-4px; --dur:0.5s; --dur2:0.6s;">vJudge</a>
+      <a href="https://onlinejudge.u-aizu.ac.jp/status/users/somik" target="_blank"
+        style="--x:-3px; --y:2px; --dur:0.7s; --dur2:0.5s;">AOJ</a>
+      <a href="https://dimikoj.com/profile/d96d?md_imdadul_haque_somik" target="_blank"
+        style="--x:5px; --y:-3px; --dur:0.6s; --dur2:0.4s;">DimikOJ</a>
+      <a href="https://toph.co/u/ihSomik" target="_blank" style="--x:-4px; --y:3px; --dur:0.5s; --dur2:0.6s;">Toph</a>
+      <a href="http://poj.org/userstatus?user_id=ihSomik" target="_blank"
+        style="--x:3px; --y:-2px; --dur:0.4s; --dur2:0.5s;">POJ</a>
     </div>
   </section>
+
+
 
   <section id="references" class="reveal">
     <h2>References</h2>
@@ -205,7 +236,6 @@
       </a>
     </div>
   </section>
-
 
   <footer>
     <p>&copy; 2025 - ihSomik. All rights reserved.</p>
