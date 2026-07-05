@@ -5,221 +5,470 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ihSomik | Portfolio</title>
+  <meta name="description"
+    content="Md. Imdadul Haque Somik — a CSE student on a journey of learning, building, and solving, exploring AI & ML." />
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
   %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E
   %3Ctext x='10' y='70' font-size='80' font-family='Arial'%3E%24%3C/text%3E
   %3C/svg%3E">
 
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) { }
+    })();
+  </script>
 </head>
 
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo">
-        <a href="#home">ih$omik</a>
+      <a class="logo" href="#home">ih$omik</a>
+      <div class="nav-right">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#cp">Competitive&nbsp;Programming</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+          <i class="fas fa-sun" aria-hidden="true"></i>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
       </div>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
-        <i class="fas fa-bars" aria-hidden="true"></i>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#cp-profiles">Problem-Solving</a></li>
-        <li><a href="#references">References</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
     </nav>
   </header>
 
-  <section id="home" class="reveal">
-    <div class="intro">
-      <h1>Greetings!</h1>
-      <p id="typing-text"></p>
-    </div>
-  </section>
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero reveal">
+      <canvas id="geo-bg" class="geo-bg" aria-hidden="true"></canvas>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">// exploring ai &amp; ml</p>
+          <h1>MD. IMDADUL HAQUE SOMIK</h1>
+          <p class="hero-sub">
+            On a journey of learning, building, and solving.
+          </p>
+          <div class="hero-actions">
+            <a href="https://drive.google.com/file/d/10ikhEjY1OPjwpvNmsW3g9TQxSIkCjbdv/view?usp=sharing" target="_blank"
+              rel="noopener" class="btn btn-solid">
+              <i class="fas fa-file-lines"></i> View CV
+            </a>
+            <a href="https://github.com/ihSomik" target="_blank" rel="noopener" class="btn btn-outline">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
 
-  <section id="about" class="reveal">
-    <h2>About Me</h2>
-    <div class="about-container">
-      <img src="images/profile.jpg" alt="Profile Picture" />
-      <div class="about-text">
-        <p>
-          I am a Computer Science and Engineering student at Rajshahi University of Engineering & Technology (RUET),
-          Bangladesh, focused on enhancing my problem-solving skills and expanding my expertise in machine learning and
-          artificial intelligence.
-        </p>
-        <a href="https://drive.google.com/file/d/10ikhEjY1OPjwpvNmsW3g9TQxSIkCjbdv/view?usp=sharing" target="_blank"
-          class="btn btn-pill">
-          <i class="fas fa-file-lines"></i> View CV
+        <div class="terminal" role="img" aria-label="Terminal session introducing Somik">
+          <div class="terminal-bar">
+            <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+            <span class="terminal-title">ihSomik@debuggingLife: ~</span>
+          </div>
+          <pre class="terminal-body" id="terminal-body" aria-hidden="true"></pre>
+        </div>
+      </div>
+
+      <div class="stat-strip">
+        <div class="stat">
+          <span class="stat-value" data-count="800">0+</span>
+          <span class="stat-label">problems solved</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" data-count="17">0</span>
+          <span class="stat-label">online judges &amp; platforms</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" data-count="5">0</span>
+          <span class="stat-label">ml projects, so far</span>
+        </div>
+        <div class="loss-curve-wrap" aria-hidden="true">
+          <svg class="loss-curve" viewBox="0 0 220 70" preserveAspectRatio="none">
+            <polyline class="loss-line" points="0,10 30,16 60,30 90,34 120,48 150,50 180,60 220,64" />
+            <text x="4" y="66" class="loss-caption">epoch</text>
+            <text x="182" y="14" class="loss-caption">loss ↓</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
+      <p class="eyebrow">// about</p>
+      <div class="about-container">
+        <img src="images/profile.webp" alt="Portrait of Md. Imdadul Haque Somik" />
+        <div class="about-text">
+          <p>
+            I'm a Computer Science &amp; Engineering student at Rajshahi University of Engineering &amp;
+            Technology (RUET), Bangladesh — on a journey of learning, building, and solving. I'm currently
+            exploring applied machine learning as an intern at <strong>FlyRank AI</strong>, where I'm still
+            learning far more than I already know.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="reveal">
+      <p class="eyebrow">// experience</p>
+      <h2>Where I've worked</h2>
+      <ol class="timeline">
+        <li class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true">01</div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3><a href="https://flyrank.ai/" target="_blank" rel="noopener">FlyRank AI</a></h3>
+              <span class="timeline-date">Jul 2026 – Present</span>
+            </div>
+            <p class="timeline-role">Machine Learning Intern · Chicago, IL (Remote)</p>
+            <ul>
+              <li>Collaborate with an international engineering team to build production-oriented ML solutions.</li>
+              <li>Build ML workflows in Python and Git under industry mentorship, following modern AI development
+                practices.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true">02</div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3><a href="https://pathao.com/" target="_blank" rel="noopener">Pathao</a></h3>
+              <span class="timeline-date">Feb 2026 – Mar 2026</span>
+            </div>
+            <p class="timeline-role">Software Engineering Trainee · Dhaka, Bangladesh
+              &nbsp;<a class="inline-link"
+                href="https://drive.google.com/file/d/1jA9b6YGrnZQQHzGiA9kdiNgrpVjKhpjM/view?usp=sharing"
+                target="_blank" rel="noopener">[Certificate]</a>
+            </p>
+            <ul>
+              <li>Built a content-based movie recommendation system using CountVectorizer and cosine similarity —
+                <a class="inline-link" href="https://github.com/ihSomik/Movie-Recommendation-System" target="_blank"
+                  rel="noopener">GitHub</a>.
+              </li>
+              <li>Used Git for version control while following collaborative development and debugging practices.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true">03</div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3><a href="https://www.facebook.com/engineeredelegance.bd" target="_blank" rel="noopener">Engineered
+                  Elegance</a></h3>
+              <span class="timeline-date">Nov 2023 – Nov 2024</span>
+            </div>
+            <p class="timeline-role">Founder &amp; Product Designer · Rajshahi, Bangladesh</p>
+            <ul>
+              <li>Founded and ran a university merchandise brand — product design, branding, and business operations.
+              </li>
+              <li>Served 300+ students, coordinating marketing, customer communication, production, and fulfillment.
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true">04</div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h3>Udvash Academic &amp; Admission Care</h3>
+              <span class="timeline-date">Nov 2023 – Jun 2024</span>
+            </div>
+            <p class="timeline-role">QnA Teacher (ID: 17164) · Dhaka, Bangladesh</p>
+            <ul>
+              <li>Provided solutions and explanations for HSC and university admission-level Mathematics and Physics
+                problems.</li>
+              <li>Supported students in strengthening conceptual understanding and improving academic performance.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="reveal">
+      <p class="eyebrow">// education</p>
+      <div class="edu-list">
+        <div class="edu-card">
+          <div class="edu-head">
+            <h3>Rajshahi University of Engineering &amp; Technology (RUET)</h3>
+            <span class="timeline-date">2023 – Expected 2027</span>
+          </div>
+          <p class="timeline-role">B.Sc. in Computer Science &amp; Engineering · Rajshahi, Bangladesh</p>
+        </div>
+        <div class="edu-card">
+          <div class="edu-head">
+            <h3>Government Science College</h3>
+            <span class="timeline-date">2019 – 2021</span>
+          </div>
+          <p class="timeline-role">Higher Secondary Certificate (HSC), Science · Dhaka, Bangladesh</p>
+        </div>
+        <div class="edu-card">
+          <div class="edu-head">
+            <h3>Shamsul Hoque Khan School and College</h3>
+            <span class="timeline-date">2017 – 2019</span>
+          </div>
+          <p class="timeline-role">Secondary School Certificate (SSC), Science · Dhaka, Bangladesh</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="reveal">
+      <p class="eyebrow">// skills</p>
+      <h2>Toolkit</h2>
+      <div class="skills-grid">
+        <div class="skill-block">
+          <p class="skill-tag"># languages</p>
+          <div class="chip-row">
+            <span class="chip">Python</span><span class="chip">C++</span><span class="chip">C</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <p class="skill-tag"># web &amp; data</p>
+          <div class="chip-row">
+            <span class="chip">Django</span><span class="chip">MySQL</span><span class="chip">SQL</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <p class="skill-tag"># tools</p>
+          <div class="chip-row">
+            <span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Linux</span><span
+              class="chip">LaTeX</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <p class="skill-tag"># embedded systems</p>
+          <div class="chip-row">
+            <span class="chip">Assembly (x86, ARM)</span><span class="chip">Arduino</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <p class="skill-tag"># machine learning</p>
+          <div class="chip-row">
+            <span class="chip">TensorFlow</span><span class="chip">Scikit-learn</span><span
+              class="chip">OpenCV</span><span class="chip">NumPy</span><span class="chip">Pandas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="reveal">
+      <p class="eyebrow">// projects</p>
+      <h2>Things I've built while learning</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <p class="project-kicker">Machine Learning</p>
+          <h3>Movie Recommendation System</h3>
+          <p>Content-based recommender using Python, Django, and Scikit-learn — CountVectorizer and cosine
+            similarity over the TMDB 5000 dataset.</p>
+          <div class="chip-row">
+            <span class="chip chip-sm">NLP</span><span class="chip chip-sm">Scikit-learn</span><span
+              class="chip chip-sm">Django</span>
+          </div>
+          <a class="btn btn-ghost" href="https://github.com/ihSomik/Movie-Recommendation-System" target="_blank"
+            rel="noopener">GitHub</a>
+        </article>
+
+        <article class="project-card">
+          <p class="project-kicker">Machine Learning</p>
+          <h3>Machine Learning with Python</h3>
+          <p>Five end-to-end ML applications spanning regression, classification, recommendation systems, and
+            CNN-based image classification.</p>
+          <div class="chip-row">
+            <span class="chip chip-sm">TensorFlow</span><span class="chip chip-sm">Pandas</span>
+          </div>
+          <a class="btn btn-ghost" href="https://github.com/ihSomik/Machine-Learning-with-Python-freeCodeCamp"
+            target="_blank" rel="noopener">GitHub</a>
+        </article>
+
+        <article class="project-card">
+          <p class="project-kicker">Machine Learning</p>
+          <h3>Machine Learning Specialization</h3>
+          <p>Supervised and unsupervised learning, neural networks, ensemble methods, and model optimization
+            across multiple datasets.</p>
+          <div class="chip-row">
+            <span class="chip chip-sm">Python</span><span class="chip chip-sm">TensorFlow</span>
+          </div>
+          <a class="btn btn-ghost" href="https://github.com/ihSomik/Machine-Learning-Specialization" target="_blank"
+            rel="noopener">GitHub</a>
+        </article>
+
+        <article class="project-card">
+          <p class="project-kicker">Web Development</p>
+          <h3>RUET Real-Time Bus Tracker</h3>
+          <p>Live campus bus tracking app built with Django, MySQL, HTML, CSS, and JavaScript.</p>
+          <div class="chip-row">
+            <span class="chip chip-sm">Django</span><span class="chip chip-sm">MySQL</span>
+          </div>
+          <a class="btn btn-ghost" href="https://github.com/ihSomik/RUET-Real-Time-Bus-Tracker" target="_blank"
+            rel="noopener">GitHub</a>
+        </article>
+
+        <article class="project-card">
+          <p class="project-kicker">Web Development</p>
+          <h3>Tic Tac Toe</h3>
+          <p>Browser game with an unbeatable AI opponent using Minimax and alpha-beta pruning.</p>
+          <div class="chip-row">
+            <span class="chip chip-sm">JavaScript</span><span class="chip chip-sm">Minimax</span>
+          </div>
+          <a class="btn btn-ghost" href="https://github.com/ihSomik/tic-tac-toe" target="_blank"
+            rel="noopener">GitHub</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- COMPETITIVE PROGRAMMING -->
+    <section id="cp" class="reveal">
+      <p class="eyebrow">// competitive programming</p>
+      <h2>Contest record</h2>
+      <div class="cp-results">
+        <div class="cp-result">
+          <h3>GyanJam 2024</h3>
+          <p class="timeline-role">RUET Intra-University Contest · Team RUET_NewBie's</p>
+          <p class="cp-rank">Ranked <strong>25<sup>th</sup> / 107</strong></p>
+          <a class="inline-link" href="https://codeforces.com/spectator/ranklist/facbd55c595686550fba19801debe5f6"
+            target="_blank" rel="noopener">Standings</a>
+        </div>
+        <div class="cp-result">
+          <h3>ICPC Dhaka Preliminary 2023</h3>
+          <p class="timeline-role">Team DELAYED ENROLLERS</p>
+          <p class="cp-rank">Ranked <strong>1416<sup>th</sup> / 2479</strong></p>
+          <a class="inline-link" href="https://icpc.global/regionals/finder/Dhaka-Preliminary-2024/standings"
+            target="_blank" rel="noopener">Standings</a>
+          &nbsp;·&nbsp;
+          <a class="inline-link"
+            href="https://drive.google.com/file/d/1G8dLuzzATkrtRPRa0JbkuCnK47dTq27O/view?usp=sharing" target="_blank"
+            rel="noopener">Certificate</a>
+        </div>
+        <div class="cp-result">
+          <h3>NCPC Preliminary 2023</h3>
+          <p class="timeline-role">Team Lost_in_illusion</p>
+          <p class="cp-rank">Ranked <strong>564<sup>th</sup> / 1044</strong></p>
+          <a class="inline-link" href="https://bapsoj.org/contests/ncpc-preliminary-ju-2023/standings" target="_blank"
+            rel="noopener">Standings</a>
+        </div>
+      </div>
+
+      <p class="cp-lead">800+ problems solved across judges — <span class="mono">$ ls profiles/</span></p>
+      <div class="ps-grid">
+        <a href="https://codeforces.com/profile/ihSomik" target="_blank" rel="noopener">Codeforces</a>
+        <a href="https://leetcode.com/u/ihSomik/" target="_blank" rel="noopener">LeetCode</a>
+        <a href="https://www.hackerrank.com/profile/ihSomik" target="_blank" rel="noopener">HackerRank</a>
+        <a href="https://lightoj.com/user/ihsomik" target="_blank" rel="noopener">LightOJ</a>
+        <a href="https://www.geeksforgeeks.org/user/ihsomik/" target="_blank" rel="noopener">GeeksforGeeks</a>
+        <a href="https://www.cses.fi/user/178080" target="_blank" rel="noopener">CSES</a>
+        <a href="https://projecteuler.net/profile/ihSomik.png" target="_blank" rel="noopener">ProjectEuler</a>
+        <a href="https://www.codechef.com/users/ihsomik" target="_blank" rel="noopener">CodeChef</a>
+        <a href="https://atcoder.jp/users/ihSomik" target="_blank" rel="noopener">AtCoder</a>
+        <a href="https://www.hackerearth.com/@ihsomik" target="_blank" rel="noopener">HackerEarth</a>
+        <a href="https://uhunt.onlinejudge.org/id/1619190" target="_blank" rel="noopener">UVa</a>
+        <a href="https://www.spoj.com/users/ihsomik/" target="_blank" rel="noopener">SPOJ</a>
+        <a href="https://vjudge.net/user/somik_2103147" target="_blank" rel="noopener">vJudge</a>
+        <a href="https://onlinejudge.u-aizu.ac.jp/status/users/somik" target="_blank" rel="noopener">AOJ</a>
+        <a href="https://dimikoj.com/profile/d96d?md_imdadul_haque_somik" target="_blank" rel="noopener">DimikOJ</a>
+        <a href="https://toph.co/u/ihSomik" target="_blank" rel="noopener">Toph</a>
+        <a href="http://poj.org/userstatus?user_id=ihSomik" target="_blank" rel="noopener">POJ</a>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="reveal">
+      <p class="eyebrow">// certifications</p>
+      <h2>Certifications</h2>
+      <ul class="cert-list">
+        <li>
+          <span class="cert-name">Machine Learning with Python</span>
+          <span class="cert-org">freeCodeCamp</span>
+          <a class="inline-link"
+            href="https://www.freecodecamp.org/certification/fcca59e5e5b-2d1c-4de9-a742-685b9cab5abe/machine-learning-with-python-v7"
+            target="_blank" rel="noopener">Verify</a>
+          <span class="cert-year">2026</span>
+        </li>
+        <li>
+          <span class="cert-name">Digital Image Processing with OpenCV in Python</span>
+          <span class="cert-org">GIS and Earth Observation University</span>
+          <a class="inline-link" href="https://www.geo.university/certificates/drjvapidgb" target="_blank"
+            rel="noopener">Verify</a>
+          <span class="cert-year">2026</span>
+        </li>
+        <li>
+          <span class="cert-name">Introduction to LaTeX</span>
+          <span class="cert-org">GIS and Earth Observation University</span>
+          <a class="inline-link" href="https://www.geo.university/certificates/wokavp3xf2" target="_blank"
+            rel="noopener">Verify</a>
+          <span class="cert-year">2026</span>
+        </li>
+        <li>
+          <span class="cert-name">Machine Learning Specialization</span>
+          <span class="cert-org">Stanford University &amp; DeepLearning.AI</span>
+          <a class="inline-link" href="https://www.coursera.org/account/accomplishments/specialization/0M4CHSOVJW7F"
+            target="_blank" rel="noopener">Verify</a>
+          <span class="cert-year">2025</span>
+        </li>
+        <li>
+          <span class="cert-name">SQL (Advanced)</span>
+          <span class="cert-org">HackerRank</span>
+          <a class="inline-link" href="https://www.hackerrank.com/certificates/fbfc60df1b8d" target="_blank"
+            rel="noopener">Verify</a>
+          <span class="cert-year">2025</span>
+        </li>
+        <li>
+          <span class="cert-name">Problem Solving (Intermediate)</span>
+          <span class="cert-org">HackerRank</span>
+          <a class="inline-link" href="https://www.hackerrank.com/certificates/eaa9ed06e166" target="_blank"
+            rel="noopener">Verify</a>
+          <span class="cert-year">2024</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+      <p class="eyebrow">// contact</p>
+      <h2>Let's talk</h2>
+      <p class="contact-lead">Still learning, always curious — happy to connect over internships, mentorship, or just a
+        good conversation about ML.</p>
+      <div class="contact-links">
+        <a class="btn btn-icon" href="mailto:imdadul.haque.somik@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
         </a>
-        <a href="https://github.com/ihSomik" target="_blank" class="btn btn-pill" style="margin-left: 12px;">
-          <i class="fab fa-github"></i> Visit GitHub
+        <a class="btn btn-icon" href="https://www.linkedin.com/in/ihSomik" target="_blank" rel="noopener"
+          aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a class="btn btn-icon" href="https://github.com/ihSomik" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a class="btn btn-icon" href="https://x.com/ihSomik" target="_blank" rel="noopener" aria-label="X (Twitter)">
+          <span class="x-glyph">𝕏</span>
+        </a>
+        <a class="btn btn-icon" href="https://www.youtube.com/@ihSomik0" target="_blank" rel="noopener"
+          aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
         </a>
       </div>
-    </div>
-  </section>
-
-  <section id="education" class="reveal">
-    <h2>Education</h2>
-    <ul class="edu-list">
-      <li>
-        <strong>Rajshahi University of Engineering and Technology (RUET)</strong><br />
-        BSc in Computer Science and Engineering, CGPA: 3.04/4.00<br />
-        <em>Rajshahi, Bangladesh (2023 – 2027)</em>
-      </li>
-      <li>
-        <strong>Government Science College</strong><br />
-        HSC in Science, GPA: 5.00/5.00<br />
-        <em>Dhaka, Bangladesh (2019 – 2021)</em>
-      </li>
-      <li>
-        <strong>Shamsul Hoque Khan School and College</strong><br />
-        SSC in Science, GPA: 5.00/5.00<br />
-        <em>Dhaka, Bangladesh (2017 – 2019)</em>
-      </li>
-    </ul>
-  </section>
-
-  <section id="experience" class="reveal">
-    <h2>Experience</h2>
-    <div class="experience-item">
-      <h3>Udvash Academic & Admission Care</h3>
-      <p><strong>Position:</strong> QnA Teacher (ID: 17164)</p>
-      <p><strong>Duration:</strong> Nov 2023 – Jun 2024</p>
-      <p><strong>Responsibility:</strong> Provided solutions to HSC and admission-level Mathematics and Physics problems
-        to enhance student understanding and performance.</p>
-    </div>
-  </section>
-
-  <section id="skills" class="reveal">
-    <h2>Technical Skills</h2>
-    <div class="skills-section">
-      <h3>Programming Languages</h3>
-      <ul class="skills-list">
-        <li>C</li>
-        <li>C++</li>
-        <li>Java</li>
-        <li>Python</li>
-      </ul>
-
-      <h3>Architecture & Embedded Systems</h3>
-      <ul class="skills-list">
-        <li>Assembly (x86, ARM)</li>
-        <li>Arduino</li>
-        <li>Embedded C (HAL)</li>
-        <li>Verilog</li>
-      </ul>
-
-      <h3>Tools & Technologies</h3>
-      <ul class="skills-list">
-        <li>Git</li>
-        <li>LaTeX</li>
-        <li>TensorFlow</li>
-        <li>SQL</li>
-      </ul>
-
-      <h3>Languages</h3>
-      <ul class="skills-list">
-        <li>English (Fluent)</li>
-        <li>Bengali (Native)</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="projects" class="reveal">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>Tic Tac Toe</h3>
-        <p>Web-based game with AI using Minimax and modern UI.</p>
-        <a class="btn btn-ghost" href="https://github.com/ihSomik/tic-tac-toe" target="_blank">GitHub</a>
-      </div>
-      <div class="project-card">
-        <h3>RUET Bus Tracker</h3>
-        <p>Real-time bus tracking app using Django and JS.</p>
-        <a class="btn btn-ghost" href="https://github.com/ihSomik/RUET-Real-Time-Bus-Tracker" target="_blank">GitHub</a>
-      </div>
-      <div class="project-card">
-        <h3>ML Specialization</h3>
-        <p>Projects using TensorFlow and Python.</p>
-        <a class="btn btn-ghost" href="https://github.com/ihSomik/Machine-Learning-Specialization"
-          target="_blank">GitHub</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="cp-profiles" class="reveal">
-    <h2>Problem-Solving Profiles</h2>
-    <div class="ps-grid">
-      <a href="https://codeforces.com/profile/ihSomik" target="_blank">Codeforces</a>
-      <a href="https://leetcode.com/u/ihSomik/" target="_blank">LeetCode</a>
-      <a href="https://www.hackerrank.com/profile/ihSomik" target="_blank">HackerRank</a>
-      <a href="https://lightoj.com/user/ihsomik" target="_blank">LightOJ</a>
-      <a href="https://www.geeksforgeeks.org/user/ihsomik/" target="_blank">GeeksforGeeks</a>
-      <a href="https://www.cses.fi/user/178080" target="_blank">CSES</a>
-      <a href="https://projecteuler.net/profile/ihSomik.png" target="_blank">ProjectEuler</a>
-      <a href="https://www.codechef.com/users/ihsomik" target="_blank">CodeChef</a>
-      <a href="https://atcoder.jp/users/ihSomik" target="_blank">AtCoder</a>
-      <a href="https://www.hackerearth.com/@ihsomik" target="_blank">HackerEarth</a>
-      <a href="https://uhunt.onlinejudge.org/id/1619190" target="_blank">UVa</a>
-      <a href="https://www.spoj.com/users/ihsomik/" target="_blank">SPOJ</a>
-      <a href="https://vjudge.net/user/somik_2103147" target="_blank">vJudge</a>
-      <a href="https://onlinejudge.u-aizu.ac.jp/status/users/somik" target="_blank">AOJ</a>
-      <a href="https://dimikoj.com/profile/d96d?md_imdadul_haque_somik" target="_blank">DimikOJ</a>
-      <a href="https://toph.co/u/ihSomik" target="_blank">Toph</a>
-      <a href="http://poj.org/userstatus?user_id=ihSomik" target="_blank">POJ</a>
-    </div>
-  </section>
-
-  <section id="references" class="reveal">
-    <h2>References</h2>
-    <div class="reference-item">
-      <p><strong><a href="https://www.ruet.ac.bd/azmainsrizon" target="_blank">Md. Azmain Yakin
-            Srizon</a></strong><br />
-        Assistant Professor, CSE, RUET<br />
-        Phone: +8801790187189<br />
-        Email: <a href="mailto:azmainsrizon@cse.ruet.ac.bd">azmainsrizon@cse.ruet.ac.bd</a></p>
-
-      <p><strong><a href="https://www.cse.ruet.ac.bd/nasifosman0210" target="_blank">Md. Nasif Osman
-            Khansur</a></strong><br />
-        Lecturer, CSE, RUET<br />
-        Phone: +8801763761979<br />
-        Email: <a href="mailto:nasif.khansur@cse.ruet.ac.bd">nasif.khansur@cse.ruet.ac.bd</a></p>
-
-      <p><strong><a href="https://www.ruet.ac.bd/mohiuddinnirobmn" target="_blank">Mohiuddin Ahmed</a></strong><br />
-        Assistant Professor, CSE, RUET<br />
-        Phone: +8801742621067<br />
-        Email: <a href="mailto:mohiuddin@cse.ruet.ac.bd">mohiuddin@cse.ruet.ac.bd</a></p>
-    </div>
-  </section>
-
-  <section id="contact" class="reveal">
-    <h2>Contact Me</h2>
-    <div class="contact-links">
-      <a class="btn btn-icon" href="mailto:imdadul.haque.somik@gmail.com" aria-label="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-      <a class="btn btn-icon" href="https://www.linkedin.com/in/ihSomik" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a class="btn btn-icon" href="https://x.com/ihSomik" target="_blank" aria-label="X (Twitter)">
-        <span style="font-weight: 700;">𝕏</span>
-      </a>
-      <a class="btn btn-icon" href="https://www.youtube.com/c/ImdadulHaqueSomik" target="_blank" aria-label="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 - ihSomik. All rights reserved.</p>
+    <p>&copy; 2026 - ihSomik. All rights reserved.</p>
   </footer>
 
   <script src="scripts.js"></script>
